@@ -107,6 +107,7 @@ STACK mystack;
 
 int main(int argc, char * argv[])
 {
+    printf(">>>create stack<<<\n");
     create_stack(&mystack);
     printf("push 1 into stack.\n");
     push_stack(&mystack, (element_type)1);
@@ -124,8 +125,16 @@ int main(int argc, char * argv[])
     printf("clear the stack now.\n");
     clear_stack(&mystack);
     list_stack(&mystack);
-
+    printf("test a lot.\n");
+    for(int i = 0; i < 50; i++)
+    {
+        push_stack(&mystack, i);
+        printf("pushing %d to stack...\n", i);
+    }
+    list_stack(&mystack);
+    printf(">>>destory stack<<<\n");
     destory_stack(&mystack);
+    printf(">>>completed<<<\n");
 
     return 0;
 }
